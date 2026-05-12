@@ -367,14 +367,30 @@ input { font-family: var(--font-body); }
 
 /* Review card */
 .hero-review-card {
-  position: absolute; bottom: 60px; left: 52px;
+  position: absolute;
+  bottom: 3px;   /* niche lane ke liye */
+  left: 510px;
   z-index: 20;
+
   background: rgba(12,26,16,0.82);
   backdrop-filter: blur(24px);
   border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 20px; padding: 18px 22px;
+
+  border-radius: 20px;
+  padding: 18px 22px;
   max-width: 300px;
+
   animation: fadeUp 0.9s 0.4s ease both;
+}
+
+@media (max-width: 768px) {
+  .hero-review-card {
+    position: relative;
+    left: 0;
+    bottom: -20px;
+    margin: 0 auto;
+    max-width: 100%;
+  }
 }
 
 /* ─── Trendy Plants ─────────────────────────────────── */
@@ -620,11 +636,11 @@ input { font-family: var(--font-body); }
     width: calc(100% - 40px); margin: 20px 20px 0;
     animation: fadeUp 0.9s 0.2s ease both;
   }
-  .hero-review-card {
+  /* .hero-review-card {
     position: relative; bottom: auto; left: auto;
     margin: 16px 20px 0; max-width: 100%;
   }
-  .hero > .hero-plant { display: none; }
+  .hero > .hero-plant { display: none; } */
 
   /* Trendy */
   .trendy-card { flex-direction: column !important; min-height: unset; }
@@ -655,4 +671,78 @@ input { font-family: var(--font-body); }
 @media (max-width: 480px) {
   .plant-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
   .hero-cta { flex-direction: column; align-items: flex-start; }
+}
+
+
+/* HAMBURGER */
+.hamburger{
+  display:none;
+  width:42px;
+  height:42px;
+  border:none;
+  background:none;
+  cursor:pointer;
+  padding:0;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:5px;
+}
+
+/* THREE LINES */
+.hamburger span{
+  width:24px;
+  height:2px;
+  background:#fff;
+  border-radius:10px;
+  display:block;
+}
+
+/* MOBILE */
+@media (max-width:768px){
+
+  /* HIDE HOME CONTACT */
+  .nav-links{
+    display:none !important;
+  }
+
+  /* SHOW THREE LINE */
+  .hamburger{
+    display:flex !important;
+  }
+
+  /* MOBILE MENU */
+  .mobile-menu{
+    position:fixed;
+    top:70px;
+    right:-100%;
+    width:260px;
+    height:100vh;
+    background:#102016;
+    padding:25px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    transition:0.4s;
+    z-index:999;
+  }
+
+  .mobile-menu.open{
+    right:0;
+  }
+
+  .menu-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.5);
+    opacity:0;
+    visibility:hidden;
+    transition:0.3s;
+    z-index:998;
+  }
+
+  .menu-overlay.open{
+    opacity:1;
+    visibility:visible;
+  }
 }

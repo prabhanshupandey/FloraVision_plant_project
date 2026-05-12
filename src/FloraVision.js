@@ -348,10 +348,14 @@ export default function FloraVision() {
               <span style={{ position:"absolute", top:4, right:4, width:16, height:16, borderRadius:"50%", background:"#4ade80", color:"#0b1a0e", fontSize:9, fontWeight:800, display:"flex", alignItems:"center", justifyContent:"center" }}>{cartCount}</span>
             )}
           </button>
-          <button className={`hamburger${menuOpen ? " open" : ""}`}
-            onClick={() => setMenuOpen(m => !m)} aria-label="Toggle menu">
-            <span/><span/><span/>
-          </button>
+         <button
+  className={`hamburger${menuOpen ? " open" : ""}`}
+  onClick={() => setMenuOpen(m => !m)}
+>
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
         </div>
       </nav>
 
@@ -425,14 +429,14 @@ export default function FloraVision() {
 
         {/* Review card */}
         <div className="hero-review-card">
-          <div style={{ display:"flex", alignItems:"center", gap:12, marginBottom:10 }}>
+          <div style={{ display:"flex", alignItems:"center", gap:12 }}>
             <div className="avatar" style={{ background:"linear-gradient(135deg,#4ade80,#22c55e)" }}>RH</div>
             <div>
               <p style={{ fontWeight:700, fontSize:14, marginBottom:4 }}>Ronnie Hamill</p>
               <Stars count={5} />
             </div>
           </div>
-          <p style={{ fontSize:12.5, color:"rgba(255,255,255,0.6)", lineHeight:1.68 }}>
+          <p style={{ fontSize:12.5, color:"rgba(255,255,255,0.6)", lineHeight:1.68, marginTop:66 }}>
             I can't express how thrilled I am with my new natural plant! They bring such a fresh and vibrant energy to my home.
           </p>
         </div>
